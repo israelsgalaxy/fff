@@ -24,7 +24,7 @@ bot.setWebHook(`${APP_URL}/bot${TOKEN}`)
 
 client.connect((err) => {
 
-  let users = client.db("FFF").collection("Users")
+  let users = client.db("FFF_unit").collection("Users")
 
   bot.on("message", (msg) => {
 
