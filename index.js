@@ -6,6 +6,8 @@ dotenv.config()
 
 let TOKEN = process.env.TOKEN
 let MONGO_URI = process.env.MONGO_URI
+let ADMIN = parseInt(process.env.ADMIN)
+let APP_URL = process.env.APP_URL
 
 let client = new mongodb.MongoClient(MONGO_URI, {
   useUnifiedTopology: true,
@@ -14,9 +16,11 @@ let client = new mongodb.MongoClient(MONGO_URI, {
 
 let bot = new TelegramBot(TOKEN, {
   webHook: {
-    port: process.env.PORT
+    port: parseInt(process.env.PORT)
   }
 })
+
+await bot.setWebHook(`${APP_URL}/bot${TOKEN}`)
 
 client.connect((err) => {
 
@@ -31,7 +35,7 @@ client.connect((err) => {
     }
 
     if (msg.text === "/start") {
-      if (msg.from.id === 739553899) {
+      if (msg.from.id === ADMIN) {
         bot.sendMessage(msg.chat.id, `Hello Admin, what message would you like to broadcast today?`)
       } else {
         users.findOne({
@@ -56,7 +60,7 @@ client.connect((err) => {
           })
       }
     } else {
-      if (msg.from.id === 739553899) {
+      if (msg.from.id === ADMIN) {
         users.find()
           .forEach((user, err) => {
             if (err) {
