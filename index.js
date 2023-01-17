@@ -48,10 +48,10 @@ client.connect((err) => {
                 chatId: msg.chat.id,
                 firstName: msg.from.first_name
               })
-
-              bot.sendMessage(msg.chat.id, `Hello, ${msg.from.first_name}😀!\n\nMy name is Bolu Okunade, and I am the WordFeast Cell Leader at CMSS Building.\n\nThank you for showing interest in fellowshipping with the WordFeast Family at CMSS Building.\n\nThrough this chat, you will be receiving direct messages about our meeting schedules, and other relevant information.\n\nShould the need arise, please do not hesitate to send me a direct message @tradewithbolu .\n\nSending plently love in your direction❤.\nThe mission is possible🔥.`)
+            
+              bot.sendMessage(msg.chat.id, `Hey ${ msg.from.first_name }\n\nSomeone probably sent you this link and guessss whattt\n\nYou actually started this bot !!!.... wow 😅😂🤣😱\n\nWhoever sent you this bot really LOVES YOU SHAAA\n\nWe literally prayed for you, and here you areeee.......🔥🔥🔥\n\nNow that you have this bot ACTIVATED, trust me your life is about to change.....\n\nJust stay tuned, you'll get super amazing updates from this bot.\n\nIf you ever, and I mean ever need someone to talk to about literally anything, send me a dm @tradewithbolu\n\nAnd, dont forget to share this link with someone using this link t.me/wordfeast_bot\n\nOnce again, welcome ${ msg.from.first_name }`)
             } else {
-              bot.sendMessage(msg.chat.id, `Hello, ${doc.firstName}😀!\n\nMy name is Bolu Okunade, and I am the WordFeast Cell Leader at CMSS Building.\n\nThank you for showing interest in fellowshipping with the WordFeast Family at CMSS Building.\n\nThrough this chat, you will be receiving direct messages about our meeting schedules, and other relevant information.\n\nShould the need arise, please do not hesitate to send me a direct message @tradewithbolu .\n\nSending plently love in your direction❤.\nThe mission is possible🔥.`)
+              bot.sendMessage(msg.chat.id, `Hey ${ doc.firstName }\n\nSomeone probably sent you this link and guessss whattt\n\nYou actually started this bot !!!.... wow 😅😂🤣😱\n\nWhoever sent you this bot really LOVES YOU SHAAA\n\nWe literally prayed for you, and here you areeee.......🔥🔥🔥\n\nNow that you have this bot ACTIVATED, trust me your life is about to change.....\n\nJust stay tuned, you'll get super amazing updates from this bot.\n\nIf you ever, and I mean ever need someone to talk to about literally anything, send me a dm @tradewithbolu\n\nAnd, dont forget to share this link with someone using this link t.me/wordfeast_bot\n\nOnce again, welcome ${ doc.firstName }`)
             }
           })
           .catch((err) => {
