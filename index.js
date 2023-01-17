@@ -13,7 +13,9 @@ let client = new mongodb.MongoClient(MONGO_URI, {
 })
 
 let bot = new TelegramBot(TOKEN, {
-  polling: true
+  webHook: {
+    port: process.env.PORT
+  }
 })
 
 client.connect((err) => {
