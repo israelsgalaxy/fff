@@ -20,7 +20,7 @@ let bot = new TelegramBot(TOKEN, {
   }
 })
 
-await bot.setWebHook(`${APP_URL}/bot${TOKEN}`)
+bot.setWebHook(`${APP_URL}/bot${TOKEN}`)
 
 client.connect((err) => {
 
